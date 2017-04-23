@@ -1,0 +1,26 @@
+﻿@model HW1BirthdayCard.Models.BirthdayWish
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none;
+    }
+
+    body {
+        background-color: #f1f1f1;
+    }
+</style>
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>From: @Html.TextBoxFor(t => t.From)</p>
+    <p>To: @Html.TextBoxFor(t => t.To)</p>
+    <p>Message: @Html.TextBoxFor(t => t.Message)</p>
+    <input type="submit" value="Send Message" />
+}
