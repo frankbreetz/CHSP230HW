@@ -1,0 +1,17 @@
+﻿
+@model Final.WebSite.Models.CategoryViewModel
+
+@{
+    ViewBag.Title = Model.Category.Name;
+}
+@Html.ActionLink("Register For Class", "RegisterForClass", new {Model.Category.Id })
+<h2>@Model.Category.Name</h2>
+<p>This is who is registered for the class(and their password, because this is a very insecure website)</p>
+@foreach (var user in Model.Products)
+{
+    <p>
+        @user.Email -
+        @user.Password
+        @Html.ActionLink("Add To Cart", "AddToCart", new { id = user.Id })
+    </p>
+}
